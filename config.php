@@ -4,5 +4,6 @@
 		public static $port = 21;
 		public static $username = "suke";
 		public static $password = "m400e4123";
+		public static $ftp_path = '/home/suke/';
 	}
 ?>
