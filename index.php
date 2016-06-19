@@ -1,4 +1,6 @@
-<!DOCTYPE html>
+<?php
+    require_once("config.php");
+?>
 <html lang="en">
 
 <head>
@@ -65,16 +67,23 @@
                         <h3>Bienvenido a</h3>
                         <h1>Usach Box</h1>
                         <hr class="intro-divider">
-                    
-                        <form action="upload.php" method="post" enctype="multipart/form-data">
+                        
+                        <form enctype="multipart/form-data" id="ftp_form">
     Selecciona el Archivo a subir:
 
-    <input type="file" class="filestyle" name="userfile" data-buttonText="Search File" id="userfile" data-placeholder="No file">
+    <input type="file" class="filestyle" name="file" data-buttonText="Search File" id="ftp_file" data-placeholder="No file">
 
     <br>
-    <input class="btn btn-primary" type="submit" value="Upload File" name="submit">
+    <input class="btn btn-primary" id="subir_ftp" type="submit" value="Upload File" name="submit" onclick="FTP.uploadAjax();">
 </form>
+
                         <hr class="intro-divider">
+<p id="ftp_msg"></p>
+
+            <!-- Mostrar los archivos -->
+            <div id="archivos_ftp">Cargando...</div>
+            <hr class="intro-divider">
+
 
                         <ul class="list-inline intro-social-buttons">
                             <li>
@@ -117,6 +126,8 @@
 
     <!-- jQuery -->
     <script src="js/jquery.js"></script>
+    <script src="js/main.js"></script>
+
 
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
